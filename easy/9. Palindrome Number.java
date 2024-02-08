@@ -18,16 +18,12 @@
 
 // solution
 
-import java.util.*;
+class Solution {
+    public boolean isPalindrome(int x) {
 
-class Firstclass {
-    public static void main(String args[]) {
-
-        int x = -121;
         int temp = x;
-
+        int remainder = 0; 
         int reversed = 0;
-        int remainder = 0;
 
         while(x != 0) {
             remainder = x % 10;
@@ -36,11 +32,8 @@ class Firstclass {
             x /= 10;
         }
         if(temp == reversed && temp >= 0) {
-            System.out.println("true");
+            return true;
         }
-        else {
-            System.out.println("false");
-        }
-        System.out.println(reversed);
+        return false;
     }
 }
