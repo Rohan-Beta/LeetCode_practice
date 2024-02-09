@@ -23,7 +23,8 @@ class Solution {
 
         for(int n : nums) {
             if(n != val) {
-                nums[i++] = n;
+                nums[i] = n;
+                i += 1;
             }
         }
         return i;
