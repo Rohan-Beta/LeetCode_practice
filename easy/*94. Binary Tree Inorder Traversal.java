@@ -28,23 +28,37 @@
  *     }
  * }
  */
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
 class Solution {
+    public void inorder(TreeNode root , List<Integer> ans) {
+
+        if(root == null) {
+            return;
+        }
+        inorder(root.left , ans);
+        ans.add(root.val);
+        inorder(root.right , ans);
+    }
     public List<Integer> inorderTraversal(TreeNode root) {
 
         List<Integer> ans = new ArrayList<>();
 
-        Deque<TreeNode> stack = new ArrayDeque<>();
+        inorder(root , ans);
 
-        while(root != null || !stack.isEmpty()) {
-            while(root != null) {
-                stack.push(root);
-                root = root.left;
-            }
-            root = stack.pop();
-            ans.add(root.val);
-
-            root = root.right;
-        }
         return ans;
     }
 }
