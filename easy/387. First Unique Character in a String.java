@@ -1,5 +1,20 @@
-387. First Unique Character in a String
+// 387. First Unique Character in a String
 
+//   Example 1:
+
+// Input: s = "leetcode"
+// Output: 0
+// Example 2:
+
+// Input: s = "loveleetcode"
+// Output: 2
+// Example 3:
+
+// Input: s = "aabb"
+// Output: -1
+
+  // solution
+  
   class Solution {
     public int firstUniqChar(String s) {
 
